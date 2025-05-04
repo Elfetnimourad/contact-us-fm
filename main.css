@@ -1,0 +1,87 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0f1e7;
+    height: 100vh;
+}
+form > div{
+    margin: 15px 0;
+}
+.card-form{
+    display: flex;
+    flex-direction: column;
+background-color: #ffffff;
+border-radius: 10px;
+width: 500px;
+height: 570px;
+padding: 15px;
+box-shadow: 10px 10px 5px lightblue;
+}
+.name-info{
+    display: flex;
+    flex-direction: row;
+}
+.display-flex{
+    display: flex;
+    flex-direction: column;
+
+}
+.ms-auto{
+    margin-left: auto;
+}
+.email-info > input{
+    height: 40px !important;
+    border-radius: 6px;
+   /* // border: 1px solid black; */
+}
+.flex-query{
+    display: flex;
+    flex-direction: row;
+    
+}
+.query-type>div{
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 30px;
+    width: 218px;
+    padding: 13px;
+}
+button{
+    width: 100%;
+    height: 40px;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+}
+.input-message{
+    height: 80px;
+    padding-top: 0;
+}
+.names{
+    height: 40px;
+    border-radius: 6px;
+    width: 240px;
+}
+.l-height{
+    line-height: 182%;
+}
+.div-query{
+    width: 50px;
+}
+.query-type{
+    width: auto;
+}
+input[type="radio"]{
+    margin-right:12px;
+}
+input[type='text']:hover{
+    border: 1px solid lightblue;
+}
+input[type='text']:focus{
+    border: 1px solid chocolate;
+    outline: none;
+}
+button[type="submit"]:hover{
+opacity: 0.9;
+}
