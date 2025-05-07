@@ -5,17 +5,18 @@ let email = document.querySelector("#email-adress");
 let subBtn = document.querySelector("button");
 let cardForm = document.querySelector(".card-form");
 let allInput = document.querySelectorAll("input");
-console.log(allInput);
+let first = document.querySelector(".styling");
+let allLabel = document.querySelectorAll("label");
+console.log(allLabel[0].textContent);
 let geneQuery = false;
 let suppRequest = false;
 let consented = false;
-let regName = /\w+/g;
+let regName = /[a-zA-Z]/g;
 let regEmail = /(\w+|\d+)@\w+.\w+/g;
 subBtn.addEventListener("click", function (e) {
   e.preventDefault();
 
   if (
-    regName.test(allInput[1].value) &&
     regEmail.test(allInput[2].value) &&
     allInput[0].value !== "" &&
     allInput[1].value !== "" &&
@@ -47,10 +48,24 @@ subBtn.addEventListener("click", function (e) {
     div.className = "pop-up-style";
     div.style.position = "absolute";
     cardForm.prepend(div);
-    if (!regName.test(allInput[0].value)) {
+    if (regName.test(allInput[0].value) === false) {
+      console.log(allLabel[0].innerText);
       allInput[0].style.border = "1px solid red";
-      let texted = document.createTextNode("incorrect");
-      allInput[0].prepend(texted);
+      let texted = allLabel[0];
+
+      texted.style.color = "red";
+      texted.style.marginLeft = "auto";
+      texted.innerText = `incorrect ${allLabel[0].textContent}`;
+
+      console.log("error");
+      // first.append(texted);
+    } else if (regName.test(allInput[1].value) === false) {
+      allInput[1].style.border = "1px solid red";
+      let texted = allLabel[1];
+
+      texted.style.color = "red";
+      texted.style.marginLeft = "auto";
+      texted.innerText = `incorrect ${allLabel[1].textContent}`;
     }
   }
 });

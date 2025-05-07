@@ -90,3 +90,7 @@ opacity: 0.9;
 button {
     cursor: pointer;
 }
+.styling{
+    display: flex;
+    flex-direction: row;
+}
