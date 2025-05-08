@@ -7,7 +7,7 @@ let cardForm = document.querySelector(".card-form");
 let allInput = document.querySelectorAll("input");
 let first = document.querySelector(".styling");
 let allLabel = document.querySelectorAll("label");
-console.log(allLabel[0].textContent);
+let messageValue = document.querySelector(".label-message");
 let geneQuery = false;
 let suppRequest = false;
 let consented = false;
@@ -17,12 +17,13 @@ subBtn.addEventListener("click", function (e) {
   e.preventDefault();
 
   if (
-    regEmail.test(allInput[2].value) &&
     allInput[0].value !== "" &&
     allInput[1].value !== "" &&
     allInput[2].value !== "" &&
     message.value !== ""
   ) {
+    console.log("msg", message.value);
+
     console.log("from submission");
     console.log(regEmail.test(allInput[2].value));
 
@@ -48,24 +49,48 @@ subBtn.addEventListener("click", function (e) {
     div.className = "pop-up-style";
     div.style.position = "absolute";
     cardForm.prepend(div);
-    if (regName.test(allInput[0].value) === false) {
-      console.log(allLabel[0].innerText);
-      allInput[0].style.border = "1px solid red";
-      let texted = allLabel[0];
+    // Input Logic
+    allInput.forEach((e, i) => {
+      if (e.value !== "" && regName.test(e.value) === false) {
+        console.log(allLabel[i].innerText);
+        e.style.border = "1px solid red";
+        let texted = allLabel[i];
 
-      texted.style.color = "red";
-      texted.style.marginLeft = "auto";
-      texted.innerText = `incorrect ${allLabel[0].textContent}`;
+        texted.style.color = "red";
+        texted.style.marginLeft = "auto";
+        texted.innerText = `incorrect ${allLabel[i].textContent}`;
+        console.log("error");
+        console.log(texted);
+        // first.append(texted);
+      } else if (e.type === "email" && regEmail.test(e.value) === false) {
+        console.log(allLabel[i].innerText);
+        e.style.border = "1px solid red";
+        let texted = allLabel[i];
 
+        texted.style.color = "red";
+        texted.style.marginLeft = "auto";
+        texted.innerText = `incorrect ${allLabel[i].textContent}`;
+        console.log("error");
+        console.log(texted);
+      }
+    });
+
+    //Message Logic
+    if (regName.test(message.value) === false) {
+      message.style.border = "1px solid red";
+      // let texted = allLabel[i];
+      let msgVal = messageValue.textContent;
+      // messageValue.innerHTML. = "auto";
+      messageValue.innerText = `incorrect ${messageValue.textContent}`;
       console.log("error");
-      // first.append(texted);
-    } else if (regName.test(allInput[1].value) === false) {
-      allInput[1].style.border = "1px solid red";
-      let texted = allLabel[1];
-
-      texted.style.color = "red";
-      texted.style.marginLeft = "auto";
-      texted.innerText = `incorrect ${allLabel[1].textContent}`;
     }
+    //  else if (regName.test(allInput[1].value) === false) {
+    //   allInput[1].style.border = "1px solid red";
+    //   let texted = allLabel[1];
+
+    //   texted.style.color = "red";
+    //   texted.style.marginLeft = "auto";
+    //   texted.innerText = `incorrect ${allLabel[1].textContent}`;
+    // }
   }
 });
