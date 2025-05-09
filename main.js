@@ -7,7 +7,8 @@ let cardForm = document.querySelector(".card-form");
 let allInput = document.querySelectorAll("input");
 let first = document.querySelector(".styling");
 let allLabel = document.querySelectorAll("label");
-let messageValue = document.querySelector(".label-message");
+let messageValue = document.querySelectorAll("div")[12];
+console.log(messageValue);
 let geneQuery = false;
 let suppRequest = false;
 let consented = false;
@@ -17,12 +18,16 @@ subBtn.addEventListener("click", function (e) {
   e.preventDefault();
 
   if (
+    regName.test(allInput[0].value) &&
+    regName.test(allInput[1].value) &&
+    regEmail.test(allInput[2].value) &&
+    regName.test(message.value) &&
     allInput[0].value !== "" &&
     allInput[1].value !== "" &&
     allInput[2].value !== "" &&
     message.value !== ""
   ) {
-    console.log("msg", message.value);
+    console.log("msg", messageValue.childNodes[0].nodeValue);
 
     console.log("from submission");
     console.log(regEmail.test(allInput[2].value));
@@ -50,6 +55,26 @@ subBtn.addEventListener("click", function (e) {
     div.style.position = "absolute";
     cardForm.prepend(div);
     // Input Logic
+
+    //  else if (regName.test(allInput[1].value) === false) {
+    //   allInput[1].style.border = "1px solid red";
+    //   let texted = allLabel[1];
+
+    //   texted.style.color = "red";
+    //   texted.style.marginLeft = "auto";
+    //   texted.innerText = `incorrect ${allLabel[1].textContent}`;
+    // }
+  } else {
+    if (regName.test(message.value) === false) {
+      message.style.border = "1px solid red";
+      // let texted = allLabel[i];
+      // let msgVal = messageValue.childNodes[0].nodeValue;
+      messageValue.style.marginLeft = "auto";
+      messageValue.textContent = `incorrect ${messageValue.textContent}`;
+      messageValue.style.color = "red";
+      console.log("error");
+    }
+
     allInput.forEach((e, i) => {
       if (e.value !== "" && regName.test(e.value) === false) {
         console.log(allLabel[i].innerText);
@@ -63,7 +88,9 @@ subBtn.addEventListener("click", function (e) {
         console.log(texted);
         // first.append(texted);
       } else if (e.type === "email" && regEmail.test(e.value) === false) {
-        console.log(allLabel[i].innerText);
+        // console.log("is it email", e.value);
+        // console.log("chof trah", regEmail.test(e.value) === true);
+        // console.log("chof trah", e.type === "email");
         e.style.border = "1px solid red";
         let texted = allLabel[i];
 
@@ -76,21 +103,5 @@ subBtn.addEventListener("click", function (e) {
     });
 
     //Message Logic
-    if (regName.test(message.value) === false) {
-      message.style.border = "1px solid red";
-      // let texted = allLabel[i];
-      let msgVal = messageValue.textContent;
-      // messageValue.innerHTML. = "auto";
-      messageValue.innerText = `incorrect ${messageValue.textContent}`;
-      console.log("error");
-    }
-    //  else if (regName.test(allInput[1].value) === false) {
-    //   allInput[1].style.border = "1px solid red";
-    //   let texted = allLabel[1];
-
-    //   texted.style.color = "red";
-    //   texted.style.marginLeft = "auto";
-    //   texted.innerText = `incorrect ${allLabel[1].textContent}`;
-    // }
   }
 });

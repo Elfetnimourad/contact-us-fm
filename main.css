@@ -45,7 +45,7 @@ align-self: self-end;
     border: 1px solid black;
     border-radius: 5px;
     height: 30px;
-    width: 218px;
+    width: 247px;
     padding: 13px;
 }
 button{
@@ -63,7 +63,7 @@ button{
 .names{
     height: 40px;
     border-radius: 6px;
-    width: 240px;
+    width: 273px;
 }
 .l-height{
     line-height: 182%;
@@ -93,4 +93,16 @@ button {
 .styling{
     display: flex;
     flex-direction: row;
+}
+@media (max-width:500px) {
+    .card-form{
+        width:400px;
+        height: 563px;
+    }
+    .container{
+        display: flex;
+        height: 88vh;
+        justify-content: center;
+        align-items: center;
+    }
 }
