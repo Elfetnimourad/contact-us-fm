@@ -95,14 +95,48 @@ button {
     flex-direction: row;
 }
 @media (max-width:500px) {
+    body{
+        overflow-y: scroll;
+    }
     .card-form{
-        width:400px;
-        height: 563px;
+        width:88%;
+        height: 101vh;
     }
     .container{
         display: flex;
-        height: 88vh;
+        height: 104vh;
         justify-content: center;
         align-items: center;
+        width: 100%;
+    }
+    .query-type{
+        display:flex;
+        flex-direction: column;
+    }
+    .support-request{
+        margin-left: 0;
+    }
+    .name-info{
+        display: flex;
+        flex-direction: column;
+    }
+    .name-info > div{
+        margin-left: 0;
+        width: 100%;
+    }
+    .names,.email-adress{
+        width: 100%;
+    }
+    .query-type>div{
+        width: 100%;
+        padding: 13px 2px;
+
+    }
+    .input-message{
+        height: 16vh;
+    }
+    .div-query{
+        display: flex;
+        justify-content: center;
     }
 }
