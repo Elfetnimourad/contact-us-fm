@@ -1,3 +1,6 @@
+:root{
+    --width:
+}
 .container{
     display: flex;
     justify-content: center;
@@ -94,17 +97,21 @@ button {
     display: flex;
     flex-direction: row;
 }
+
 @media (max-width:500px) {
+    :root {
+      --width: 88%;
+    }
     body{
-        overflow-y: scroll;
+        overflow-x: scroll;
     }
     .card-form{
-        width:88%;
-        height: 101vh;
+        width:var(--width);
+        height: 105vh;
     }
     .container{
         display: flex;
-        height: 104vh;
+        height: 130vh;
         justify-content: center;
         align-items: center;
         width: 100%;
@@ -138,5 +145,10 @@ button {
     .div-query{
         display: flex;
         justify-content: center;
+    }
+    .pop-up-style{
+        width: calc(var(--width) - 3%) !important;
+        position:absolute !important;
+        transform: translate(-2%,-84%) !important;
     }
 }
