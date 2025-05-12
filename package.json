@@ -1,0 +1,23 @@
+{
+  "homepage": "https://Elfetnimourad.github.io/contact-us-fm",
+  "name": "fm-contact-form",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Elfetnimourad/contact-us-fm.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Elfetnimourad/contact-us-fm/issues"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
