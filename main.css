@@ -1,0 +1,154 @@
+:root{
+    --width:
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0f1e7;
+    height: 100vh;
+}
+form > div{
+    margin: 15px 0;
+}
+.card-form{
+    display: flex;
+    flex-direction: column;
+background-color: #ffffff;
+border-radius: 10px;
+width: 570px;
+height: 570px;
+padding: 15px;
+box-shadow: 10px 10px 5px lightblue;
+align-self: self-end;
+}
+.name-info{
+    display: flex;
+    flex-direction: row;
+}
+.display-flex{
+    display: flex;
+    flex-direction: column;
+
+}
+.ms-auto{
+    margin-left: auto;
+}
+.email-info > input{
+    height: 40px !important;
+    border-radius: 6px;
+   /* // border: 1px solid black; */
+}
+.flex-query{
+    display: flex;
+    flex-direction: row;
+    
+}
+.query-type>div{
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 30px;
+    width: 247px;
+    padding: 13px;
+}
+button{
+    width: 100%;
+    height: 40px;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+}
+.input-message{
+    height: 80px;
+    padding-top: 0;
+    outline: none;
+}
+.names{
+    height: 40px;
+    border-radius: 6px;
+    width: 273px;
+}
+.l-height{
+    line-height: 182%;
+}
+.div-query{
+    width: 50px;
+}
+.query-type{
+    width: auto;
+}
+input[type="radio"]{
+    margin-right:12px;
+}
+input[type='text']:hover{
+    border: 1px solid lightblue;
+}
+input[type='text']:focus{
+    border: 1px solid chocolate;
+    outline: none;
+}
+button[type="submit"]:hover{
+opacity: 0.9;
+}
+button {
+    cursor: pointer;
+}
+.styling{
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width:500px) {
+    :root {
+      --width: 88%;
+    }
+    body{
+        overflow-x: scroll;
+    }
+    .card-form{
+        width:var(--width);
+        height: 105vh;
+    }
+    .container{
+        display: flex;
+        height: 130vh;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+    .query-type{
+        display:flex;
+        flex-direction: column;
+    }
+    .support-request{
+        margin-left: 0;
+    }
+    .name-info{
+        display: flex;
+        flex-direction: column;
+    }
+    .name-info > div{
+        margin-left: 0;
+        width: 100%;
+    }
+    .names,.email-adress{
+        width: 100%;
+    }
+    .query-type>div{
+        width: 100%;
+        padding: 13px 2px;
+
+    }
+    .input-message{
+        height: 16vh;
+    }
+    .div-query{
+        display: flex;
+        justify-content: center;
+    }
+    .pop-up-style{
+        width: calc(var(--width) - 3%) !important;
+        position:absolute !important;
+        transform: translate(-2%,-84%) !important;
+    }
+}

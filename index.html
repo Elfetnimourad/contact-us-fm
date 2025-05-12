@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card-form">
+            <h2>Contact Us</h2>
+            <form action="">
+                <div class="name-info">
+                    <div class="display-flex ">
+                            <label for="" class="first-name">First Name</label>
+                        
+                        <input type="text" id="first-name" placeholder="1" class="names"/>
+                    </div>
+                    <div class="display-flex ms-auto">
+
+                    <label for="">Last Name</label>
+                
+                    <input type="text" id="last-name" placeholder="2" class="names"/>
+                </div>
+
+                </div>
+              <div class="email-info display-flex">
+                <label for="#email-adress">Email Adress</label>
+                <input type="email" id="email-adress" placeholder="email" class="email-adress">
+
+              </div>
+              <label for=""> Query Type</label>
+
+                <div class="query-type flex-query">
+                    <div class="general-enquiry flex-query div-query">
+                        <input type="radio" placeholder="3"/>
+                        <div class="l-height">General Enquiry</div>
+                    </div>
+                   <div class="flex-query support-request div-query ms-auto">
+                    <input type="radio" placeholder="4"/>
+                    <div class="l-height">Support Request</div>
+                   </div>
+                  
+
+                </div>
+<div class="message-area display-flex">
+    <div class="label-message">Message</div>
+    <textarea type="text" id="message-area" placeholder="write your thougts" class="input-message">
+        </textarea>
+</div>
+<div class="flex-query">
+    <input type="checkbox" placeholder="v"/><p>I consent to being contactd by the team</p>   
+
+</div>
+        
+
+<button>submit</button>
+</form>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
