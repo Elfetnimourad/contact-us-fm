@@ -1,14 +1,13 @@
 {
-  "homepage": "https://your-username.github.io/your-repo-name",
-
+  "homepage": "https://github.com/Elfetnimourad/contact-us-fm#readme",
   "name": "fm-contact-form",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -20,5 +19,7 @@
   "bugs": {
     "url": "https://github.com/Elfetnimourad/contact-us-fm/issues"
   },
-  "homepage": "https://github.com/Elfetnimourad/contact-us-fm#readme"
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
 }
