@@ -12,7 +12,7 @@ console.log(messageValue);
 let geneQuery = false;
 let suppRequest = false;
 let consented = false;
-let regName = /[a-zA-Z]/g;
+let regName = /[a-zA-Z]/;
 let regEmail = /(\w+|\d+)@\w+.\w+/g;
 subBtn.addEventListener("click", function (e) {
   e.preventDefault();
@@ -76,29 +76,34 @@ subBtn.addEventListener("click", function (e) {
     }
 
     allInput.forEach((e, i) => {
-      if (e.value !== "" && regName.test(e.value) === false) {
-        console.log(allLabel[i].innerText);
-        e.style.border = "1px solid red";
-        let texted = allLabel[i];
+      if (e.type === "email") {
+        if (regEmail.test(e.value) === false) {
+          console.log(allLabel[i].innerText);
+          e.style.border = "1px solid red";
+          let texted = allLabel[i];
 
-        texted.style.color = "red";
-        texted.style.marginLeft = "auto";
-        texted.innerText = `incorrect ${allLabel[i].textContent}`;
-        console.log("error");
-        console.log(texted);
-        // first.append(texted);
-      } else if (e.type === "email" && regEmail.test(e.value) === false) {
-        // console.log("is it email", e.value);
-        // console.log("chof trah", regEmail.test(e.value) === true);
-        // console.log("chof trah", e.type === "email");
-        e.style.border = "1px solid red";
-        let texted = allLabel[i];
+          texted.style.color = "red";
+          texted.style.marginLeft = "auto";
+          texted.innerText = `incorrect ${allLabel[i].textContent}`;
 
-        texted.style.color = "red";
-        texted.style.marginLeft = "auto";
-        texted.innerText = `incorrect ${allLabel[i].textContent}`;
-        console.log("error");
-        console.log(texted);
+          console.log("error");
+          console.log(texted);
+          // first.append(texted);
+        }
+      } else {
+        if (regName.test(e.value) === false) {
+          // console.log("is it email", e.value);
+          // console.log("chof trah", regEmail.test(e.value) === true);
+          // console.log("chof trah", e.type === "email");
+          e.style.border = "1px solid red";
+          let texted = allLabel[i];
+
+          texted.style.color = "red";
+          texted.style.marginLeft = "auto";
+          texted.innerText = `incorrect ${allLabel[i].textContent}`;
+          console.log("error");
+          console.log(texted);
+        }
       }
     });
 
